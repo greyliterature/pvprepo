@@ -401,6 +401,8 @@ sv_cheats				"1"
 sv_forcepreload 			"1"					// If set to 1, forces server-side preloading, once again reducing loading pauses.; https://forum.benchmark.rs/threads/hl2-comanda-zahtevnost-na-foru.59572/
 // cl_ragdoll_collide 			"0"					// DOESN'T WORK? (why?) 1 = prevents characters from merging into each other due to ragdoll effects; https://forum.benchmark.rs/threads/hl2-comanda-zahtevnost-na-foru.59572/
 fps_max 				"240.5"					// Set fps limit to refresh rate; https://www.hltv.org/forums/threads/2742047/fps-max-what-to-set
+fps_max_menu 			"999"
+fps_max_nofocus			"999"
 mat_reducefillrate 			"1"					// Shaderthruput 0 = High (better Quality), 1 = Low (more fps); josel
 r_fastzreject 				"-1"					// Nvidia = -1 amd = 0 must change this based on gpu, (Values >1 enable a fast Z rejection algorithm, to be performed on the GPU (as opposed to on the CPU. The value `-1' autodetects hardware support for this feature, which is safer than forcing it.); https://www.reddit.com/r/apexlegends/comments/ivbq9j/my_autoexec_config_maximum_fps_no_quality_loss_pc/, https://steamcommunity.com/sharedfiles/filedetails/?id=1282254845
 mat_vsync				"0"					// KEEP OFF, Force sync to vertical retrace; https://developer.valvesoftware.com/wiki/List_of_Garry%27s_Mod_console_commands_and_variables
