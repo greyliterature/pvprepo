@@ -19,7 +19,7 @@ HPH.exe makes the process of making a HUD a lot simpler, but it isn't meant for 
 ## Captions font being too small 
       Will find solution later probably (definitely a simple fix, and probably in ClientScheme.res)
 ## 'TargetIDSmall' isn't a valid font / performing arithmetic on w cl_targetid.lua error  
-      1. Copy this: https://gist.github.com/95348953489345893524897/42ea70d17f64e3f89bc7da5ab649e4df (Thanks Redox)
+      1. Copy this: https://gist.github.com/greyliterature/42ea70d17f64e3f89bc7da5ab649e4df (Thanks Redox)
       2. Paste into GarrysMod\garrysmod\resource\ClientScheme.res under the "TargetID" section
 ## Font showing player name is too big / weird looking
       1. Replace "TargetID" section in GarrysMod\garrysmod\resource\ClientScheme.res with "TargetID" section in yourbackupfolder\resource\ClientScheme.res
