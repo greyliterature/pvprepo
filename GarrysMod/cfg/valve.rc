@@ -341,7 +341,7 @@ alias 	"stptroll"			"simple_thirdperson_cam_pitch -90; simple_thirdperson_cam_ya
 alias 	"nostptroll"			"simple_thirdperson_cam_pitch 0; simple_thirdperson_cam_yaw 0; m_side 50; m_forward 50; nonull
 
 alias 	"health"			"gm_spawnsent item_healthkit; gm_spawnsent item_healthkit; gm_spawnsent item_healthkit; gm_spawnsent item_healthkit"
-alias 	"armor" 			"gm_spawnsent item_battery, gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery"
+alias 	"armor" 			"gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery; gm_spawnsent item_battery"
 alias 	"1h"				"gm_spawnsent item_healthkit"		// spawns 1 health
 alias 	"1a"				"gm_spawnsent item_battery"		// spawns 1 battery
 
