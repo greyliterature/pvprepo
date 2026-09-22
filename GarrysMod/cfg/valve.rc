@@ -2,7 +2,6 @@
 
 
 alias zbox "connect 193.243.190.18:27064"					// Testing server
-
 // Console
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
 developer					"1"								// prints more things and shows console prints on top left 
@@ -27,7 +26,7 @@ closecaption			"1"
 // Input Settings
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
 m_rawinput		 		"1"					// 1 = Turn on raw input for mouse movement
-sensitivity		 		"1"					// preference        
+sensitivity		 		"0.5"					// preference        
 zoom_sensitivity_ratio 	"1.04570982"				// sensitivity ratio 1 is actually around 0.25x, I think 1.04 is 1:1 sens
 in_usekeyboardsampletime 		"1"					// Keyboard filtering not used unless you use keylook, and you probably would not want this off if you did; https://docs.comfig.app/latest/tf2/misconceptions/#resolution-and-windows-launch-options
 m_filter 		 		"0"					// 1 = 2 frame mouse filtering, M_FILTER functions now, and does what it's supposed to. HOORAY!; https://commits.facepunch.com/534668 
@@ -105,9 +104,9 @@ bind	"r"		 			"+reload"
 bind	"s" 		 		"+back"
 unbind	"t"	 	
 bind	"u" 				"messagemode2"
-bind	"v"			 		"noclip
+bind	"v"			 	"lastinv"
 bind	"w"			 			"+forward"
-bind	"x" 			 		"lastinv"
+unbind	"x"// 			 		"lastinv"
 bind	"y"						"messagemode" 			 	
 bind	"z"			 			"gmod_undo"
 bind	"[" 		 			"record fill; stop"				// Used to reset graphics and sometimes "unload" weapon models
@@ -123,7 +122,7 @@ bind	"TAB"			 		"+gammachange"					// gmod keeps changing my brightness whenever
 bind	"ESCAPE"		 		"cancelselect"
 bind	"PAUSE"			 		"pause"
 bind	"SHIFT"			 		"+speed"
-bind	"ALT"			 		"+walk"
+bind	"ALT"			 		"pktoggle"
 bind	"CTRL"   	 			"+duck"
 bind	"UPARROW"	 			"+lookup"
 bind	"LEFTARROW" 	 		"+left"
@@ -259,7 +258,7 @@ cl_playermodel				"female01" 				// default "none"
 //cl_playerskin 				""					// not sure
 cl_defaultweapon 			"weapon_physgun"			// On-respawn weapon
 cl_autowepswitch 			"0"					// 0 = Don't switch to more powerful weapons when picked up, Setting to 1 makes it so that if you have your physgun out and someone gives you a weapon it will automatically make you pick it up, This creates an obvious issue if you are building, Weapon power is determined by scripts/weapons/weapon.txt "Weight", and can be retrieved by Weapon:GetWeight(); https://github.com/Facepunch/garrysmod/tree/master/garrysmod/scripts/weapons
-gmod_language				"zh-cn"					// china woo-hoo
+gmod_language				"de"					// china woo-hoo
 bot_zombie				"0"					// makes bots spawned by "bot" command not move
 
 // Alias Bypasses
@@ -312,14 +311,28 @@ alias 	"walldestroyed"			"gm_spawn models/props_debris/walldestroyed01a.mdl"
 alias	"coaster"			"gm_spawn models/xqm/coastertrack/slope_225_4.mdl"
 alias	"canalbars"			"gm_spawn models/props_canal/canal_bars004.mdl"
 alias	"fakefence"			"gm_spawn models/props/de_train/chainlinkgate.mdl"
+alias	"furnace"			"gm_spawn models/props/cs_militia/furnace01.mdl"
+alias 	"bigwall"			"gm_spawn models/props_buildings/collapsedbuilding01awall.mdl"
+alias	"window"			"gm_spawn models/props_debris/windowdestroyed01a.mdl"
+alias 	"macman"			"gm_spawn models/props/de_nuke/nuklogo.mdl"
+alias 	"arch"				"gm_spawn models/props/de_train/tunnelarch.mdl"
+alias	"winebarrel"			"gm_spawn models/props/de_inferno/wine_barrel_p10.mdl"
+alias	"rifleglass"			"gm_spawn models/props/cs_militia/gun_cabinet_glass.mdl"
+alias	"frige"				"gm_spawn models/props/cs_militia/refrigerator01.mdl"
+alias	"xfoot"				"gm_spawn models/mechanics/roboticslarge/xfoot.mdl"
+alias	"parliament"			"gm_spawn models/props_rooftop/parliament_dome_destroyed_interior.mdl"
 
 // Prop sets
 alias 	"pk1"				"bind x tide; bind c lockers; bind v moped; bind g coaster; pk"								// Probably the most commonly used prop set
-alias 	"pk2"				"bind x tide; bind c lockers2; bind v moped; bind g coaster; bind t canalbars; pk"		// Prop set I use
+alias 	"pk2"				"bind x frige; bind f xfoot; bind y window; bind u parliament	; bind v undo; bind g coaster; bind t arch; pk"		// Prop set I use
 alias 	"pk2.2"				"bind x walldestroyed; bind c lockers2; bind v trainwheel; bind g plate; pk"			
 
+alias 	"pktoggle" 		"pktoggle1"					
+alias 	"pktoggle1"		"alias pktoggle pktoggle2; pk2; echo pk"    // Use +zoom when I press the key
+alias 	"pktoggle2" 		"alias pktoggle pktoggle1; npk; echo npk"  // Stop zooming in when I press the key again
+
 alias 	"pk"     			"unbind mwheelup; unbind mwheeldown; physgun_wheelspeed 1000000"
-alias 	"npk"				"bind mwheelup invprev; bind mwheeldown invnext; bind v noclip; bind c +menu_context; bind x lastinv; physgun_wheelspeed 10"
+alias 	"npk"				"bind mwheelup invprev; bind mwheeldown invnext; bind v lastinv; physgun_wheelspeed 10"
 				
 // Extra Aliases
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
@@ -520,7 +533,7 @@ mat_motion_blur_falling_intensity 	"0"
 
 // Resolution 
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
-alias 	"window"			"mat_setvideomode 1920 1080 1"		// 1080p Window Mode
+alias 	"windowed"			"mat_setvideomode 1920 1080 1"		// 1080p Window Mode
 alias 	"fullscreen"			"mat_setvideomode 1920 1080 0"		// 1080p Fullscreen
 
 // Sprays
